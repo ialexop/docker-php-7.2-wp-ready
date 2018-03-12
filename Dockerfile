@@ -39,6 +39,6 @@ RUN { \
 		echo 'opcache.enable_cli=1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
-RUN a2enmod rewrite expires headers
+RUN a2enmod rewrite expires headers mime deflate
 
 CMD ["apache2-foreground"]
