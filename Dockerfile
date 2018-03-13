@@ -41,4 +41,6 @@ RUN { \
 
 RUN a2enmod rewrite expires headers mime deflate
 
+RUN apt-get install php-memcached memcached
+
 CMD ["apache2-foreground"]
