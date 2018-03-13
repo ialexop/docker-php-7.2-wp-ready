@@ -41,4 +41,8 @@ RUN { \
 
 RUN a2enmod rewrite expires headers mime deflate
 
+RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev memcached \
+    && pecl install memcached \
+    && docker-php-ext-enable memcached
+
 CMD ["apache2-foreground"]
