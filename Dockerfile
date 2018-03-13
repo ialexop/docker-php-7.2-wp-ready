@@ -39,7 +39,7 @@ RUN { \
 		echo 'opcache.enable_cli=1'; \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
-RUN a2enmod rewrite expires headers mime deflate
+RUN a2enmod rewrite expires headers mime deflate setenvif
 
 RUN apt-get update && apt-get install -y libmemcached-dev zlib1g-dev memcached \
     && pecl install memcached \
